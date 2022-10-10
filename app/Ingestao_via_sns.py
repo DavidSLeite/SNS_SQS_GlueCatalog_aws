@@ -5,7 +5,7 @@ from datetime import datetime
 from envVars import ARN_TOPIC_SNS
 
 # Vars de entrada
-dataHoraTransacao = datetime.now()
+dataHoraTransacao = str(datetime.now())
 numeroAgenciaDestino = str(input("Digite o Número da Agencia: "))
 numeroContaDestino = str(input("Digite o Número da Conta: "))
 numeroDigitoContaDestino = str(input("Digite o Dígito da Conta: "))
