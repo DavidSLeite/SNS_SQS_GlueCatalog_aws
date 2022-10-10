@@ -19,7 +19,7 @@ print(
     """
 )
 tipoChavePix = int(input("Digite aqui: "))
-ChavePix = str(input("Digite a Chave Pix: "))
+chavePix = str(input("Digite a Chave Pix: "))
 valorPix = float(input("Digite o Valor: "))
 print("========================================================")
 
@@ -45,7 +45,7 @@ payload = {
         "tipo_conta":"Conta Corrente",
         "identificador_cliente":"1",
         "tipo_chave_destino":tipoChavePix,
-        "chave_pix_destino":ChavePix,
+        "chave_pix_destino":chavePix,
     },
     "valor_transacao":valorPix,
     "tipo_moeda":"BRL"
