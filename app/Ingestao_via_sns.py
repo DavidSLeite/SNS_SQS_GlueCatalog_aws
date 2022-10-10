@@ -1,8 +1,11 @@
 import json
 import uuid
 import boto3
+from datetime import datetime
+from envVars import ARN_TOPIC_SNS
 
 # Vars de entrada
+dataHoraTransacao = datetime.now()
 numeroAgenciaDestino = str(input("Digite o Número da Agencia: "))
 numeroContaDestino = str(input("Digite o Número da Conta: "))
 numeroDigitoContaDestino = str(input("Digite o Dígito da Conta: "))
@@ -23,6 +26,7 @@ print("========================================================")
 # Tratamento Paylaod
 payload = {
     "identificador_transacao":str(uuid.uuid4()),
+    "data_hora_transacao":dataHoraTransacao,
     "conta_origem":{
         "numero_agencia":"001",
         "numero_conta":"0001",
@@ -55,7 +59,7 @@ client = boto3.client('sns')
 
 # publicando menssagem no topic SNS
 response = client.publish(
-    TargetArn=" Colocar o ARN do SNS ",
-    Message=json.dumps({'default': payload_json}),
-    MessageStructure='json'
+    TargetArn = ARN_TOPIC_SNS,
+    Message = json.dumps({'default': payload_json}),
+    MessageStructure = 'json'
 )
