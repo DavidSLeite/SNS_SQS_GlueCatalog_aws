@@ -42,7 +42,7 @@ def lambda_handler(event, context):
         return df
 
     # Insere os dados do dataframe pandas na tabela Glue Catalog, criando partições dinamicamente pela lib awswrangler
-    def exec_df_to_table(
+    def main(
         df,
         path,
         database,
@@ -77,7 +77,7 @@ def lambda_handler(event, context):
     df = criaDF(event)
     path = os.environ['PATH_S3']
     partition_cols = ['data_transacao']
-    database = 'dbtransacaocorp'
+    database = 'bronze_dbtransacaocorp'
     table = 'tb_transacao_pix'
     dtype = {
         'identificador_transacao': 'string',
@@ -110,7 +110,7 @@ def lambda_handler(event, context):
         'start-execution' : inicioLambda
     }
     
-    msg = exec_df_to_table(
+    msg = main(
         df,
         path,
         database,
@@ -119,6 +119,6 @@ def lambda_handler(event, context):
         dtype,
         msg
     )
-    
+        
     #logar a execução do lambda no cloudwatch
     geraLog(msg)

@@ -1,6 +1,6 @@
-CREATE DATABASE dbtransacaocorp;
+CREATE DATABASE silver_dbtransacaocorp;
 
-CREATE EXTERNAL TABLE IF NOT EXISTS `dbtransacaocorp`.`TB_TRANSACAO_PIX` (
+CREATE EXTERNAL TABLE IF NOT EXISTS `silver_dbtransacaocorp`.`TB_TRANSACAO_PIX` (
   `identificador_transacao` string,
   `data_hora_transacao` string,
   `conta_origem_numero_agencia` string,
