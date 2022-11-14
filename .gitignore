@@ -1,2 +1,4 @@
 app/envVars.py
 app/__pycache__/
+*.csv
+app/glue

@@ -19,10 +19,10 @@ CREATE EXTERNAL TABLE IF NOT EXISTS `silver_dbtransacaocorp`.`TB_TRANSACAO_PIX` 
   `conta_destino_identificador_cliente` string,
   `conta_destino_tipo_chave_destino` string,
   `conta_destino_chave_pix_destino` string,
-  `valor_transacao` string,
+  `valor_transacao` double,
   `tipo_moeda` string
 )
-PARTITIONED BY (`data_transacao` string)
+PARTITIONED BY (`data_transacao` date)
 ROW FORMAT SERDE 'org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe'
 STORED AS INPUTFORMAT 'org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat' OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat'
 LOCATION 's3://...'
