@@ -1,0 +1,31 @@
+{
+    "id": "string",
+    "nome": "string",
+    "idade": "string",
+    "payload_carta":{
+        "nome_catra":"string",
+        "HP":"string",
+        "payload1":{
+            "id_dopayload":"integer",
+            "banana":"string",
+            "lista_de_anos": [
+                "string"
+            ],
+            "lista_de_donos_telefones":[
+                {
+                    "nome_dono":"string",
+                    "telefone":"string"
+                }
+            ]
+        }
+    },
+    "listapkm":[
+        "string"
+    ],
+    "lista_anoimes":[
+        {
+            "ano":"string",
+            "nome_anime":"string"
+        }
+    ]
+}
