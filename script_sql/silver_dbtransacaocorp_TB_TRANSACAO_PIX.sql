@@ -2,7 +2,7 @@ CREATE DATABASE silver_dbtransacaocorp;
 
 CREATE EXTERNAL TABLE IF NOT EXISTS `silver_dbtransacaocorp`.`TB_TRANSACAO_PIX` (
   `identificador_transacao` string,
-  `data_hora_transacao` string,
+  `data_hora_transacao` timestamp,
   `conta_origem_numero_agencia` string,
   `conta_origem_numero_conta` string,
   `conta_origem_dict` string,
